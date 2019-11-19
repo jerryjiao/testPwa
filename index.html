@@ -34,18 +34,21 @@
     </script>
     <script>
       const messaging = firebase.messaging();
-
-      messaging.requestPermission()
-      .then(function() {
-        console.log('Notification permission granted.');
-        return messaging.getToken();
-      })
-      .then(function(token) {
-        console.log(token);
-      })
-      .catch(function(err) {
-        console.log('Unable to get permission to notify.', err);
-      })
+      const itm = document.getElementsByClassName('vertical-container')
+      console.log('TCL: itm', itm)
+      const timeNow = new Date();
+      itm[0].innerHTML = `<span>${timeNow}</span>`
+      // messaging.requestPermission()
+      // .then(function() {
+      //   console.log('Notification permission granted.');
+      //   return messaging.getToken();
+      // })
+      // .then(function(token) {
+      //   console.log(token);
+      // })
+      // .catch(function(err) {
+      //   console.log('Unable to get permission to notify.', err);
+      // })
     </script>
   </body>
 </html>
